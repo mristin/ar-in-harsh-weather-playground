@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Transform Demo</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+    <script type="application/javascript">
+      function main() {
+        var img = document.getElementById("myImage");
+
+        var translationX = 0;
+        var translationY = 0;
+
+        document.addEventListener("mousemove", function (evt) {
+          translationX -= evt.movementX;
+          translationY -= evt.movementY;
+
+          img.style.transform = (
+            "translate(" + translationX + "px," + translationY + "px) rotate(33deg)"
+          );
+        })
+      }
+
+      window.onload = main;
+    </script>
+</head>
+<body>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Emblem_of_Astana.svg/480px-Emblem_of_Astana.svg.png"
+     id="myImage" alt="astana"/>
+</body>
+</html>
